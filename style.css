@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=Luxurious+Roman&family=Montserrat&family=Outfit:wght@300&family=Roboto+Mono&family=Source+Code+Pro&display=swap");
+
+body {
+  margin: 0;
+  background-image: url("./images/generalbackground.png");
+  background-repeat: repeat;
+  font-family: "Source Code Pro", monospace;
+  color: white;
+}
+
+#game-canvas {
+  background-image: url("./images/canvasbackground.jpg");
+  border-radius: 5px;
+  border-style: dashed solid;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#splash-screen h1 {
+  font-size: 4rem;
+  margin: 50px;
+}
+
+#splash-screen h3 {
+  font-size: 2rem;
+}
+
+#start-btn {
+  margin: 40px;
+}
+
+#pizzas-container {
+  margin-bottom: 40px;
+}
+
+#start-btn,
+#restart-btn {
+  background-color: red;
+  border-radius: 5px;
+  border-style: solid;
+  border-color: white;
+  font-family: "Source Code Pro", monospace;
+  color: white;
+  font-size: 1.5rem;
+  height: 40px;
+  min-width: 100px;
+}
+
+#start-btn:hover {
+  background-color: white;
+  border-radius: 5px;
+  border-style: solid;
+  border-color: black;
+  font-family: "Source Code Pro", monospace;
+  color: black;
+  font-size: 1.5rem;
+  height: 60px;
+  width: 200px;
+}
+
+#restart-btn:hover {
+  background-color: white;
+  border-radius: 5px;
+  border-style: solid;
+  border-color: black;
+  font-family: "Source Code Pro", monospace;
+  color: black;
+  font-size: 1.5rem;
+  height: 60px;
+  width: 200px;
+}
+
+#restart-btn {
+  margin-top: 100px;
+}
+
+#splash-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#gameover-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-top: 50px;
+}
+
+#gameover-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#gameover-screen img {
+  margin-bottom: 0;
+  padding: 0;
+}
+
+/*eliminar el canvas y el final */
+#game-canvas,
+#gameover-screen {
+  display: none;
+}
