@@ -21,3 +21,8 @@ const startGame = () => {
 
 let eatPizzaButton = document.querySelector("#start-btn");
 eatPizzaButton.addEventListener("click", startGame);
+
+//! AQUÍ ME QUEDÉ
+canvas.addEventListener("keydown", () => {
+  //invocar funcion
+});

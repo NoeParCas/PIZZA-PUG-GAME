@@ -30,4 +30,6 @@ class Pizzapug {
   pizzapugDown = () => {
     this.y = this.y + pizzapugSpeed;
   };
+
+  // movimiento!!
 }
