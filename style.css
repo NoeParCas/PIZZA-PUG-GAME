@@ -9,9 +9,10 @@ body {
 }
 
 #game-canvas {
-  background-image: url("./images/canvasbackground.jpg");
+  /*background-image: url("./images/canvasbackground.jpg");*/
   border-radius: 5px;
-  border-style: dashed solid;
+  border-style: solid;
+  margin-top: 150px;
 }
 
 .container {
@@ -50,7 +51,7 @@ body {
   height: 40px;
   min-width: 100px;
 }
-
+/*
 #start-btn:hover {
   background-color: white;
   border-radius: 5px;
@@ -74,6 +75,7 @@ body {
   height: 60px;
   width: 200px;
 }
+*/
 
 #restart-btn {
   margin-top: 100px;
@@ -92,13 +94,14 @@ body {
   margin-top: 50px;
 }
 
+/*
 #gameover-screen {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-
+*/
 #gameover-screen img {
   margin-bottom: 0;
   padding: 0;
