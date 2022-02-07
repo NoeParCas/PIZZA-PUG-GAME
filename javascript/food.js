@@ -7,10 +7,10 @@ class Food {
     this.height = size;
     this.img = new Image();
     this.img.src = image;
-    this.gravity = 3;
+    this.gravity = 4;
   }
 
-  //métodos de los veggies
+  //métodos del food
   drawImage = () => {
     ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
     this.Gravity(); //llamo a la función de gravedad una vez que se dibujan las imágenes.
