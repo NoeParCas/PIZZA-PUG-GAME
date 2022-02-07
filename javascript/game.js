@@ -6,16 +6,15 @@ class Game {
     this.pizzapug = new Pizzapug();
     this.carrotArr = [new Food("./images/carrot.png")];
     this.brocoliArr = [new Food("./images/brocoli.png")];
-    this.pizzaArr = [new Food("./images/pizza.png", 200)];
+    this.pizzaArr = [new Food("./images/pizza.png", 130)];
     //this.veggies1 = new Food("./images/brocoli.png");
     //this.veggies2 = new Food("./images/brocoli.png");
     //this.veggies3 = new Food("./images/carrot.png");
-    //this.pizza = new Food("./images/pizza.png", 200);
-    this.foodSeparation = 200;
+    this.pizza = new Food("./images/pizza.png");
     this.isGameOn = true;
     this.pizzaScore = 1000;
-    this.score = document.getElementById("score");
-    this.score.innerText = 0;
+    this.scoreDom = document.querySelector("#score");
+    this.score = 0;
   }
 
   //Aquí realizamos las funciones
@@ -34,7 +33,7 @@ class Game {
       this.pizzapug.y < veggies.y + veggies.height &&
       this.pizzapug.height + this.pizzapug.y > veggies.y
     ) {
-      console.log("COLISIOOOOON");
+      //console.log("COLISIOOOOON");
       //termino loop
       this.isGameOn = false;
       //oculto canvas
@@ -44,8 +43,22 @@ class Game {
     }
   };
 
-  updateScore = (score) => {
-    this.score += score;
+  checkScore = (pizza) => {
+    if (
+      this.pizzapug.x < pizza.x + pizza.width &&
+      this.pizzapug.x + this.pizzapug.width > pizza.x &&
+      this.pizzapug.y < pizza.y + pizza.height &&
+      this.pizzapug.height + this.pizzapug.y > pizza.y
+    ) {
+      //console.log("COLISIOOOOON");
+      //eliminar pizza
+      ctx.clearRect(pizza.x, pizza.y, pizza.width, pizza.height);
+      //acumular el score en una variable
+      this.score += this.pizzaScore;
+      //acceder al valor del DOM
+      this.scoreDom.innerText = this.score;
+      //console.log(this.scoreDom.innerText);
+    }
   };
 
   //! MÉTODOS DEL JUEGO
@@ -79,7 +92,7 @@ class Game {
     //this.veggies3.drawImage();
     //this.pizza.drawImage();
 
-    // Comprobar si tocan
+    // Comprobar si colisionan los veggies
 
     this.carrotArr.forEach((eachCarrot) => {
       this.checkColision(eachCarrot);
@@ -88,16 +101,10 @@ class Game {
     this.brocoliArr.forEach((eachBrocoli) => {
       this.checkColision(eachBrocoli);
     });
-    /*this.checkColision(
-      //   this.updateScore,
-      //this.brocoliArr,
-      this.carrotArr,
-      //this.pizzaArr
-      //this.pizza,
-      //this.veggies1,
-      //this.veggies2,
-      //this.veggies3
-    );*/
+
+    this.pizzaArr.forEach((eachPizza) => {
+      this.checkScore(eachPizza);
+    });
 
     // 4. recursión para la animación
     if (this.isGameOn) {

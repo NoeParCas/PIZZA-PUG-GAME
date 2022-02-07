@@ -27,4 +27,8 @@ class Food {
 
     //console.log(this.y);
   };
+
+  //clearImage = () => {
+  // ctx.clearRect(this.img, this.x, this.y, this.width, this.height);
+  // };
 }

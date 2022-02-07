@@ -17,7 +17,7 @@ const startGame = () => {
   splashScreen.style.display = "none";
   canvas.style.display = "flex";
   gameOverScreen.style.display = "none";
-  //score.style.display = "block";
+  score.style.display = "block";
 
   // empieza el juego
   let newGame = new Game();
