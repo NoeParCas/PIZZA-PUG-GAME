@@ -15,18 +15,19 @@ audio.volume = 0.2;
 //* STATE MANAGAMENT FUNCTIONS
 
 const startGame = () => {
-  //splashScreen da paso al canvas
-  //console.log("click");
+  //música Maestro!
   audio.play().then(() => {
     return true;
   });
   audio.loop = true;
   //audio.reset;
 
+  //splashScreen da paso al canvas
   splashScreen.style.display = "none";
   canvas.style.display = "flex";
   gameOverScreen.style.display = "none";
-  score.style.display = "block";
+  //score.style.display = "block";
+
   // empieza el juego
   let newGame = new Game();
   //console.log(newGame);
