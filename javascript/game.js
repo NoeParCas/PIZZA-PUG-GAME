@@ -33,6 +33,7 @@ class Game {
       //console.log("COLISIOOOOON");
       //termino loop
       this.isGameOn = false;
+      //paro música
       //oculto canvas
       canvas.style.display = "none";
       //game over Screen
@@ -56,7 +57,6 @@ class Game {
       //acceder al valor del DOM
       this.scoreDom.innerText = this.score;
       //console.log(this.scoreDom.innerText);
-      //eliminar pizza
     }
   };
 
@@ -99,10 +99,12 @@ class Game {
       eachFood.drawImage();
     });
 
+    //música
+    //this.audio.audioGame();
     //añadir más vegetales a los arr
     this.moreVeggies();
-    // Comprobar si colisionan los veggies
 
+    // Comprobar si colisionan los veggies
     this.carrotArr.forEach((eachCarrot) => {
       this.checkColision(eachCarrot);
     });

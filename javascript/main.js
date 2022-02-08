@@ -8,17 +8,25 @@ const eatPizzaButton = document.querySelector("#start-btn");
 const playAgainButton = document.querySelector("#restart-btn");
 let newGame;
 const score = document.querySelector("#score-container");
+let audio = new Audio();
+audio.src = "./audio/audiogame.mp3";
+audio.volume = 0.2;
 
 //* STATE MANAGAMENT FUNCTIONS
 
 const startGame = () => {
   //splashScreen da paso al canvas
-  console.log("click");
+  //console.log("click");
+  audio.play().then(() => {
+    return true;
+  });
+  audio.loop = true;
+  //audio.reset;
+
   splashScreen.style.display = "none";
   canvas.style.display = "flex";
   gameOverScreen.style.display = "none";
   score.style.display = "block";
-
   // empieza el juego
   let newGame = new Game();
   //console.log(newGame);
@@ -35,5 +43,15 @@ const startGame = () => {
 
 //* ADD EVENT lISTENERS
 
-eatPizzaButton.addEventListener("click", startGame);
-playAgainButton.addEventListener("click", startGame);
+//eatPizzaButton.addEventListener("click", startGame);
+eatPizzaButton.addEventListener("click", () => {
+  startGame();
+  //this.audio.audioGame();
+  //console.log("MUSICA!");
+});
+
+playAgainButton.addEventListener("click", () => {
+  //this.audioGame.pause();
+  //this.audioGame();
+  startGame();
+});

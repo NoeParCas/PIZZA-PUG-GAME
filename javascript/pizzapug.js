@@ -7,7 +7,7 @@ class Pizzapug {
     this.height = 150;
     this.img = new Image();
     this.img.src = "./images/pizzapug.png";
-    this.pizzapugSpeed = 50;
+    this.pizzapugSpeed = 60;
   }
 
   //métodos del pug pizzero
@@ -23,11 +23,6 @@ class Pizzapug {
       this.y = downPosition;
     }
   };
-
-  //checkColision = (updateScore, pizza, veggies1, veggies2, veggies3) => {
-  // console.log(pizza.x, pizza.y);
-  // updateScore(1000);
-  //};
 
   ArrowRight = () => {
     const rightPosition = this.x + this.pizzapugSpeed;
