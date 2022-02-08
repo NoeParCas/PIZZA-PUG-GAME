@@ -43,7 +43,7 @@ class Game {
     }
   };
 
-  checkScore = (pizza) => {
+  checkScore = (pizza, i) => {
     if (
       this.pizzapug.x < pizza.x + pizza.width &&
       this.pizzapug.x + this.pizzapug.width > pizza.x &&
@@ -52,12 +52,14 @@ class Game {
     ) {
       //console.log("COLISIOOOOON");
       //eliminar pizza
-      ctx.clearRect(pizza.x, pizza.y, pizza.width, pizza.height);
+      this.pizzaArr.splice(this.pizzaArr[i], 1);
+      this.pizzaArr.push(new Food("./images/pizza.png", 130));
       //acumular el score en una variable
       this.score += this.pizzaScore;
       //acceder al valor del DOM
       this.scoreDom.innerText = this.score;
       //console.log(this.scoreDom.innerText);
+      //eliminar pizza
     }
   };
 
@@ -102,8 +104,8 @@ class Game {
       this.checkColision(eachBrocoli);
     });
 
-    this.pizzaArr.forEach((eachPizza) => {
-      this.checkScore(eachPizza);
+    this.pizzaArr.forEach((eachPizza, i) => {
+      this.checkScore(eachPizza, i);
     });
 
     // 4. recursión para la animación

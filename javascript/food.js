@@ -1,8 +1,8 @@
 class Food {
   constructor(image, size = 110) {
     //propiedades del pug pizzero
-    this.x = 0;
-    this.y = Math.floor(Math.random() * (1080 - 1)) + 1;
+    this.x = Math.floor(Math.random() * (1080 - 1)) + 1;
+    this.y = -200; //Math.floor(Math.random() * (1080 - 1)) + 1;
     this.width = size;
     this.height = size;
     this.img = new Image();
@@ -24,11 +24,10 @@ class Food {
       this.y = -80;
       this.x = Math.floor(Math.random() * (1080 - 1)) + 1;
     }
-
     //console.log(this.y);
   };
 
-  //clearImage = () => {
-  // ctx.clearRect(this.img, this.x, this.y, this.width, this.height);
-  // };
+  clearImage = () => {
+    ctx.clearRect(this.img, this.x, this.y, this.width, this.height);
+  };
 }
