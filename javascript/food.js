@@ -7,7 +7,7 @@ class Food {
     this.height = size;
     this.img = new Image();
     this.img.src = image;
-    this.gravity = 4;
+    this.gravity = 2;
   }
 
   //métodos del food

@@ -7,7 +7,7 @@ class Pizzapug {
     this.height = 150;
     this.img = new Image();
     this.img.src = "./images/pizzapug.png";
-    this.pizzapugSpeed = 30;
+    this.pizzapugSpeed = 50;
   }
 
   //métodos del pug pizzero

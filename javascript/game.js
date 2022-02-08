@@ -7,9 +7,6 @@ class Game {
     this.carrotArr = [new Food("./images/carrot.png")];
     this.brocoliArr = [new Food("./images/brocoli.png")];
     this.pizzaArr = [new Food("./images/pizza.png", 130)];
-    //this.veggies1 = new Food("./images/brocoli.png");
-    //this.veggies2 = new Food("./images/brocoli.png");
-    //this.veggies3 = new Food("./images/carrot.png");
     this.pizza = new Food("./images/pizza.png");
     this.isGameOn = true;
     this.pizzaScore = 1000;
@@ -63,6 +60,19 @@ class Game {
     }
   };
 
+  moreVeggies = () => {
+    let lastBrocoli = this.brocoliArr[this.brocoliArr.length - 1];
+    let lastCarrot = this.carrotArr[this.carrotArr.length - 1];
+
+    if (lastBrocoli.y >= canvas.height) {
+      //this.x = Math.floor(Math.random() * (1080 - 1)) + 1;
+      this.brocoliArr.push(new Food("./images/brocoli.png"));
+    } else if (lastCarrot.y >= canvas.height) {
+      // this.x = Math.floor(Math.random() * (1080 - 1)) + 1;
+      this.carrotArr.push(new Food("./images/carrot.png"));
+    }
+  };
+
   //! MÉTODOS DEL JUEGO
   //Aquí invocamos las funciones
   gameLoop = () => {
@@ -77,11 +87,11 @@ class Game {
     this.drawBackground();
     this.pizzapug.drawPizzapug();
 
-    this.carrotArr.forEach((eachFood) => {
+    this.brocoliArr.forEach((eachFood) => {
       eachFood.drawImage();
     });
 
-    this.brocoliArr.forEach((eachFood) => {
+    this.carrotArr.forEach((eachFood) => {
       eachFood.drawImage();
     });
 
@@ -89,11 +99,8 @@ class Game {
       eachFood.drawImage();
     });
 
-    //this.veggies1.drawImage();
-    //this.veggies2.drawImage();
-    //this.veggies3.drawImage();
-    //this.pizza.drawImage();
-
+    //añadir más vegetales a los arr
+    this.moreVeggies();
     // Comprobar si colisionan los veggies
 
     this.carrotArr.forEach((eachCarrot) => {
@@ -104,6 +111,7 @@ class Game {
       this.checkColision(eachBrocoli);
     });
 
+    //actualiza el score y elimina pizza del arr
     this.pizzaArr.forEach((eachPizza, i) => {
       this.checkScore(eachPizza, i);
     });
