@@ -21,12 +21,24 @@
           <li>Eat as many pizzas as you can!</li>
         </ul>
     -->
+        <div class="add-name">
+          <input
+            type="text"
+            name="addName"
+            id="name-input"
+            placeholder="hooman name"
+          />
+          <button id="btn-add">Add</button>
+        </div>
+        <div class="list-container">
+          <ul id="name-list"></ul>
+        </div>
 
         <button id="start-btn">Eat Pizza!</button>
         <div id="pizzas-container">
-          <img id="pizza1" src="./images/pizza.png" width="230" />
-          <img id="pizza2" src="./images/pizza.png" width="230" />
-          <img id="pizza3" src="./images/pizza.png" width="230" />
+          <img id="pizza1" src="./images/pizza.png" width="200" />
+          <img id="pizza2" src="./images/pizza.png" width="200" />
+          <img id="pizza3" src="./images/pizza.png" width="200" />
         </div>
       </div>
 
@@ -41,6 +53,11 @@
       <!--GAME OVER-->
       <div id="gameover-screen">
         <h3 id="gameover-title">What is wrong hooman? don`t like pizza??</h3>
+
+        <div class="update-container">
+          <ul id="nameandscore-list"></ul>
+        </div>
+
         <div>
           <img src="./images/pizza.png" width="250" />
         </div>

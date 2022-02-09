@@ -11,8 +11,34 @@ const score = document.querySelector("#score-container");
 let audio = new Audio();
 audio.src = "./audio/audiogame.mp3";
 audio.volume = 0.2;
+const addName = document.querySelector("#name-input");
+const ulistName = document.querySelector("#name-list");
+const addNameBtn = document.querySelector("#btn-add");
+const uListUpdateNamScor = document.querySelector("#nameandscore-list");
 
 //* STATE MANAGAMENT FUNCTIONS
+
+const addHoomanName = () => {
+  let addNameDom = addName.value;
+  //crear un nuevo elemento en la lista
+  let newNameList = document.createElement("li");
+  //crear el innerText del nuevo elemento li
+  newNameList.innerText = "Welcome " + addNameDom + "! Are you ready??";
+  //agregar el elemento li a la ul que ya tenemos
+  ulistName.appendChild(newNameList);
+  //limpiar el input
+  addName.value = " ";
+};
+
+const updateNameScore = () => {
+  let addNameDom = addName.value;
+  let scoreDom = score.innerText;
+  let newNameScoreList = document.createElement("li");
+  newNameScoreList.innerText =
+    "Well ..." + addNameDom + " you achieved " + scoreDom;
+
+  uListUpdateNamScor.appendChild(newNameScoreList);
+};
 
 const startGame = () => {
   //música Maestro!
@@ -47,12 +73,12 @@ const startGame = () => {
 //eatPizzaButton.addEventListener("click", startGame);
 eatPizzaButton.addEventListener("click", () => {
   startGame();
-  //this.audio.audioGame();
-  //console.log("MUSICA!");
 });
 
 playAgainButton.addEventListener("click", () => {
-  //this.audioGame.pause();
-  //this.audioGame();
   startGame();
+});
+
+addNameBtn.addEventListener("click", () => {
+  addHoomanName();
 });

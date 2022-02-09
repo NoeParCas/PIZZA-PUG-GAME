@@ -12,6 +12,8 @@ class Game {
     this.pizzaScore = 1000;
     this.scoreDom = document.querySelector("#score");
     this.score = 0;
+    this.uListUpdateNamScor = document.querySelector("#nameandscore-list");
+    this.addName = document.querySelector("#name-input");
   }
 
   //Aquí realizamos las funciones
@@ -38,6 +40,20 @@ class Game {
       canvas.style.display = "none";
       //game over Screen
       gameOverScreen.style.display = "flex";
+      //actualizar el nombre y el contador
+      this.updateNameScore();
+      /*
+      this.addName = addName.value;
+      this.scoreDom = scoreDom.innerText;
+      let newNameScoreList = document.createElement("li");
+      newNameScoreList.innerText =
+        "Well ..." + this.addName + " you achieved " + this.scoreDom;
+
+      uListUpdateNamScor.appendChild(newNameScoreList);
+
+      addName.value = "";
+      scoreDom.innerText = "";
+      */
     }
   };
 
@@ -73,6 +89,16 @@ class Game {
     }
   };
 
+  updateNameScore = () => {
+    let addNameDom = this.addName.value;
+    let scoreDom = this.scoreDom.innerText;
+    let newNameScoreList = document.createElement("li");
+    newNameScoreList.innerText =
+      "Well ..." + addNameDom + " you achieved " + scoreDom;
+
+    uListUpdateNamScor.appendChild(newNameScoreList);
+  };
+
   //! MÉTODOS DEL JUEGO
   //Aquí invocamos las funciones
   gameLoop = () => {
@@ -99,8 +125,6 @@ class Game {
       eachFood.drawImage();
     });
 
-    //música
-    //this.audio.audioGame();
     //añadir más vegetales a los arr
     this.moreVeggies();
 

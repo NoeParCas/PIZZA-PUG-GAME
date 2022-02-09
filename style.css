@@ -22,6 +22,14 @@ body {
   align-items: center;
 }
 
+.add-name {
+  display: flex;
+  height: 30px;
+  width: 194px;
+  border-radius: 5px;
+  border-style: solid;
+}
+
 #splash-screen h1 {
   font-size: 4rem;
   margin: 50px;
@@ -32,11 +40,17 @@ body {
 }
 
 #start-btn {
-  margin: 40px;
+  margin: 80px;
 }
 
 #pizzas-container {
   margin-bottom: 40px;
+  margin-top: 80px;
+}
+
+#name-list {
+  list-style: none;
+  font-size: 1.5rem;
 }
 
 @keyframes rotate {
@@ -67,7 +81,6 @@ body {
   animation: 3s rotate linear infinite;
   -webkit-transform-origin: 50% 50%;
   transform-origin: 50% 50%;
-  margin-bottom: 200px;
 }
 
 #pizza3 {
