@@ -42,6 +42,11 @@ class Game {
       gameOverScreen.style.display = "flex";
       //actualizar el nombre y el contador
       this.updateNameScore();
+
+      audio.pause().then(() => {
+        return true;
+      });
+      audio.loop = false;
     }
   };
 
@@ -80,8 +85,27 @@ class Game {
   updateNameScore = () => {
     let scoreDom = this.scoreDom.innerText;
     let newNameScoreList = document.createElement("li");
-    newNameScoreList.innerText =
-      "Well ..." + playerName + " you achieved " + scoreDom;
+
+    if (scoreDom <= 2000) {
+      newNameScoreList.innerText =
+        playerName +
+        " you achieved " +
+        scoreDom +
+        " points. That is... a waste of pizza!";
+    } else if (scoreDom <= 5000) {
+      newNameScoreList.innerText =
+        "Well ..." +
+        playerName +
+        " you achieved " +
+        scoreDom +
+        ". Not bad hooman.";
+    } else if (scoreDom <= 10000) {
+      newNameScoreList.innerText = "WOW " + playerName + " you ate " + scoreDom;
+      +" points in pizzas!";
+    } else {
+      newNameScoreList.innerText =
+        scoreDom + " points " + playerName + " you BEAST! ";
+    }
 
     uListUpdateNamScor.appendChild(newNameScoreList);
   };

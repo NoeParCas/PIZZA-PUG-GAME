@@ -30,6 +30,14 @@ body {
   border-style: solid;
 }
 
+#btn-add {
+  background-color: red;
+  font-family: "Source Code Pro", monospace;
+  color: white;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
 #splash-screen h1 {
   font-size: 4rem;
   margin: 50px;
@@ -103,8 +111,6 @@ body {
   font-family: "Source Code Pro", monospace;
   color: white;
   font-size: 1.5rem;
-  height: 40px;
-  min-width: 100px;
 }
 
 #start-btn:hover {
@@ -115,8 +121,6 @@ body {
   font-family: "Source Code Pro", monospace;
   color: black;
   font-size: 1.5rem;
-  height: 60px;
-  width: 200px;
 }
 
 #restart-btn:hover {
@@ -127,8 +131,6 @@ body {
   font-family: "Source Code Pro", monospace;
   color: black;
   font-size: 1.5rem;
-  height: 60px;
-  width: 200px;
 }
 
 #restart-btn {
