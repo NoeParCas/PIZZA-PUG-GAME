@@ -33,10 +33,10 @@ class Food {
   };
 
   foodSpeed = () => {
-    setTimeout(() => (this.gravity = 3), 4000);
+    setTimeout(() => (this.gravity = 3), 5000);
     //console.log("foodSpeed");
     setTimeout(() => (this.gravity = 4), 10000);
     setTimeout(() => (this.gravity = 5), 20000);
-    setTimeout(() => (this.gravity = 6), 30000);
+    //setTimeout(() => (this.gravity = 6), 30000);
   };
 }

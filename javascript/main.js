@@ -10,24 +10,25 @@ let newGame;
 const score = document.querySelector("#score-container");
 let audio = new Audio();
 audio.src = "./audio/audiogame.mp3";
-audio.volume = 0.2;
+audio.volume = 0.1;
 const addName = document.querySelector("#name-input");
 const ulistName = document.querySelector("#name-list");
 const addNameBtn = document.querySelector("#btn-add");
 const uListUpdateNamScor = document.querySelector("#nameandscore-list");
+let playerName = "";
 
 //* STATE MANAGAMENT FUNCTIONS
 
 const addHoomanName = () => {
-  let addNameDom = addName.value;
+  playerName = addName.value;
   //crear un nuevo elemento en la lista
   let newNameList = document.createElement("li");
   //crear el innerText del nuevo elemento li
-  newNameList.innerText = "Welcome " + addNameDom + "! Are you ready??";
+  newNameList.innerText = "Welcome " + playerName + "! Are you ready??";
   //agregar el elemento li a la ul que ya tenemos
   ulistName.appendChild(newNameList);
   //limpiar el input
-  //addName.value = " ";
+  addName.value = " ";
 };
 
 const startGame = () => {
@@ -52,6 +53,8 @@ const startGame = () => {
       newGame.pizzapug[event.key]();
     }
   }); //esta sintaxis la vi en un video de youtube, es buena práctica¿?
+
+  newGame.scoreDom.innerText = 0;
 
   newGame.gameLoop();
 

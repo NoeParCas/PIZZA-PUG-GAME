@@ -11,9 +11,9 @@ class Game {
     this.isGameOn = true;
     this.pizzaScore = 1000;
     this.scoreDom = document.querySelector("#score");
-    this.score = 0;
     this.uListUpdateNamScor = document.querySelector("#nameandscore-list");
     this.addName = document.querySelector("#name-input");
+    this.score = 0;
   }
 
   //Aquí realizamos las funciones
@@ -77,20 +77,11 @@ class Game {
     }
   };
 
-  foodSpeed = () => {
-    setTimeout(() => (this.food.gravity = 3), 4000);
-    //console.log("foodSpeed");
-    setTimeout(() => (this.food.gravity = 4), 8000);
-    setTimeout(() => (this.food.gravity = 5), 15000);
-    setTimeout(() => (this.food.gravity = 6), 20000);
-  };
-
   updateNameScore = () => {
-    let addNameDom = this.addName.value;
     let scoreDom = this.scoreDom.innerText;
     let newNameScoreList = document.createElement("li");
     newNameScoreList.innerText =
-      "Well ..." + addNameDom + " you achieved " + scoreDom;
+      "Well ..." + playerName + " you achieved " + scoreDom;
 
     uListUpdateNamScor.appendChild(newNameScoreList);
   };
