@@ -14,6 +14,7 @@ class Food {
   drawImage = () => {
     ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
     this.Gravity(); //llamo a la función de gravedad una vez que se dibujan las imágenes.
+    this.foodSpeed();
   };
 
   Gravity = () => {
@@ -29,5 +30,13 @@ class Food {
 
   clearImage = () => {
     ctx.clearRect(this.img, this.x, this.y, this.width, this.height);
+  };
+
+  foodSpeed = () => {
+    setTimeout(() => (this.gravity = 3), 4000);
+    //console.log("foodSpeed");
+    setTimeout(() => (this.gravity = 4), 10000);
+    setTimeout(() => (this.gravity = 5), 20000);
+    setTimeout(() => (this.gravity = 6), 30000);
   };
 }

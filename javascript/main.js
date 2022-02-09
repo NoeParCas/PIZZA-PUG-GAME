@@ -27,17 +27,7 @@ const addHoomanName = () => {
   //agregar el elemento li a la ul que ya tenemos
   ulistName.appendChild(newNameList);
   //limpiar el input
-  addName.value = " ";
-};
-
-const updateNameScore = () => {
-  let addNameDom = addName.value;
-  let scoreDom = score.innerText;
-  let newNameScoreList = document.createElement("li");
-  newNameScoreList.innerText =
-    "Well ..." + addNameDom + " you achieved " + scoreDom;
-
-  uListUpdateNamScor.appendChild(newNameScoreList);
+  //addName.value = " ";
 };
 
 const startGame = () => {

@@ -42,18 +42,6 @@ class Game {
       gameOverScreen.style.display = "flex";
       //actualizar el nombre y el contador
       this.updateNameScore();
-      /*
-      this.addName = addName.value;
-      this.scoreDom = scoreDom.innerText;
-      let newNameScoreList = document.createElement("li");
-      newNameScoreList.innerText =
-        "Well ..." + this.addName + " you achieved " + this.scoreDom;
-
-      uListUpdateNamScor.appendChild(newNameScoreList);
-
-      addName.value = "";
-      scoreDom.innerText = "";
-      */
     }
   };
 
@@ -87,6 +75,14 @@ class Game {
       // this.x = Math.floor(Math.random() * (1080 - 1)) + 1;
       this.carrotArr.push(new Food("./images/carrot.png"));
     }
+  };
+
+  foodSpeed = () => {
+    setTimeout(() => (this.food.gravity = 3), 4000);
+    //console.log("foodSpeed");
+    setTimeout(() => (this.food.gravity = 4), 8000);
+    setTimeout(() => (this.food.gravity = 5), 15000);
+    setTimeout(() => (this.food.gravity = 6), 20000);
   };
 
   updateNameScore = () => {
@@ -127,6 +123,7 @@ class Game {
 
     //añadir más vegetales a los arr
     this.moreVeggies();
+    //this.foodSpeed();
 
     // Comprobar si colisionan los veggies
     this.carrotArr.forEach((eachCarrot) => {
