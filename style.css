@@ -36,10 +36,9 @@ body {
 
 .add-name {
   display: flex;
-  height: 30px;
-  width: 194px;
+  height: 40px;
+  width: 197px;
   border-radius: 5px;
-  border-style: solid;
 }
 
 #btn-add {
@@ -52,7 +51,7 @@ body {
 
 #splash-screen h1 {
   font-size: 6rem;
-  margin: 50px;
+  margin: 30px;
 }
 
 #splash-screen h3 {
@@ -60,12 +59,12 @@ body {
 }
 
 #start-btn {
-  margin: 80px;
+  margin: 50px;
 }
 
 #pizzas-container {
   margin-bottom: 40px;
-  margin-top: 80px;
+  margin-top: 30px;
 }
 
 #name-list {
@@ -108,10 +107,6 @@ body {
   animation: 3s rotate linear infinite;
   -webkit-transform-origin: 50% 50%;
   transform-origin: 50% 50%;
-}
-
-#score-container {
-  font-size: 1rem;
 }
 
 #start-btn,

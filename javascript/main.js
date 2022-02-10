@@ -56,6 +56,7 @@ const startGame = () => {
   }); //esta sintaxis la vi en un video de youtube, es buena práctica¿?
 
   newGame.scoreDom.innerText = 0;
+  newGame.uListUpdateNamScor.innerText = " ";
 
   newGame.gameLoop();
 

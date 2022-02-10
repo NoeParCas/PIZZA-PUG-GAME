@@ -9,14 +9,14 @@ MVP (DOM-CANVAS)
 The game has a pug that moves around the canvas. Vertically and horizontally.
 Food start to fall from the top of the canvas.
 Veggies are so unhealthy that can take you to the Game Over Screen.
-Pizza gives is the only food you can eat.
+Pizza is the only food you can eat.
 
 BACKLOG
 
-Iteraction with food. Veggies ends game and pizza gives you score (bonus).
-Add music to the game screen. BONUS
-Add players name. BONUS
-Add scoreboard. BONUS
+Scoreboard, each pizza 1000 points
+Add music to the game screen.
+Add players name.
+Add a message at the end with players name and score.
 
 DATA STRUCTURE
 
@@ -25,6 +25,8 @@ main.js
 -buildSplashScreen () {}
 -buildGameScreen () {}
 -buildGameOverScreen () {}
+-addHoomanName () {}
+-startGame () {}
 
 game.js
 
@@ -37,24 +39,14 @@ game.js
 -gameOver () {}
 -addFood () {}
 
-pug.js
+pizzapug.js
 
 -Pug (){this.x; this.y; this.direction; this.size}
 -draw (){}
 -move () {}
 
-brocoli.js
+food.js
 -brocoli () { this.x; this.y; this.direction; this.size }
--draw () {}
--move () {}
-
-carrot.js
--carrot () { this.x; this.y; this.direction; this.size }
--draw () {}
--move () {}
-
-pizza.js
--pizza () { this.x; this.y; this.direction; this.size }
 -draw () {}
 -move () {}
 

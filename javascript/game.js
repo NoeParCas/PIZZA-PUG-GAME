@@ -13,7 +13,7 @@ class Game {
     this.scoreDom = document.querySelector("#score");
     this.uListUpdateNamScor = document.querySelector("#nameandscore-list");
     this.addName = document.querySelector("#name-input");
-    this.listUpdateNamScor = document.querySelector("#nameandscore-list li");
+    this.listUpdateNamScor = document.querySelector("#nameandscore-list, li");
     this.score = 0;
   }
 
