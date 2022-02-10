@@ -9,14 +9,15 @@ MVP (DOM-CANVAS)
 The game has a pug that moves around the canvas. Vertically and horizontally.
 Food start to fall from the top of the canvas.
 Veggies are so unhealthy that can take you to the Game Over Screen.
-Pizza is the only food you can eat.
+Pizza is the only food you can eat. It desapears when you touch it.
 
 BACKLOG
 
 Scoreboard, each pizza 1000 points
 Add music to the game screen.
-Add players name.
+Add players name at the beginning of the game.
 Add a message at the end with players name and score.
+Increase the speed of the falling food
 
 DATA STRUCTURE
 

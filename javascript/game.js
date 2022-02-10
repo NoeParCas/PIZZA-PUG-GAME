@@ -14,6 +14,9 @@ class Game {
     this.uListUpdateNamScor = document.querySelector("#nameandscore-list");
     this.addName = document.querySelector("#name-input");
     this.score = 0;
+    this.yumy = new Image();
+    this.yumy.src = "images/yumimage.png";
+    this.yumOn = false;
   }
 
   //Aquí realizamos las funciones
@@ -60,7 +63,10 @@ class Game {
       //eliminar pizza
       this.pizzaArr.splice(this.pizzaArr[i], 1);
       this.pizzaArr.push(new Food("./images/pizza.png", 130));
-
+      //this.yumOn = true;
+      //this.yumyText();
+      ctx.drawImage(this.yumy, this.pizzapug.x, this.pizzapug.y, 50, 50);
+      //this.yumyText();
       //setInterval(
       //() => ctx.fillText("YUM!", this.pizzapug.x, this.pizzapug.y),
       //  2000
@@ -72,6 +78,14 @@ class Game {
       //acceder al valor del DOM
       this.scoreDom.innerText = this.score;
       //console.log(this.scoreDom.innerText);
+    }
+  };
+
+  yumyText = () => {
+    if ((this.yumOn = true)) {
+      setInterval(() => {
+        ctx.drawImage(this.yumy, this.pizzapug.x, this.pizzapug.y, 50, 50);
+      }, 2000);
     }
   };
 
