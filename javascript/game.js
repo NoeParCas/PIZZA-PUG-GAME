@@ -4,8 +4,8 @@ class Game {
     this.bg = new Image();
     this.bg.src = "./images/canvasbackground.jpg";
     this.pizzapug = new Pizzapug();
-    this.carrotArr = [new Food("./images/carrot.png")];
-    this.brocoliArr = [new Food("./images/brocoli.png")];
+    this.carrotArr = [new Food("./images/carrot.png", 80)];
+    this.brocoliArr = [new Food("./images/brocoli.png", 80)];
     this.pizzaArr = [new Food("./images/pizza.png", 130)];
     this.pizza = new Food("./images/pizza.png");
     this.isGameOn = true;
@@ -13,7 +13,6 @@ class Game {
     this.scoreDom = document.querySelector("#score");
     this.uListUpdateNamScor = document.querySelector("#nameandscore-list");
     this.addName = document.querySelector("#name-input");
-    this.listUpdateNamScor = document.querySelector("#nameandscore-list, li");
     this.score = 0;
   }
 
@@ -36,14 +35,13 @@ class Game {
       //console.log("COLISIOOOOON");
       //termino loop
       this.isGameOn = false;
-      //paro música
       //oculto canvas
       canvas.style.display = "none";
       //game over Screen
       gameOverScreen.style.display = "flex";
       //actualizar el nombre y el contador
       this.updateNameScore();
-
+      //paro música
       audio.pause().then(() => {
         return true;
       });
@@ -62,6 +60,13 @@ class Game {
       //eliminar pizza
       this.pizzaArr.splice(this.pizzaArr[i], 1);
       this.pizzaArr.push(new Food("./images/pizza.png", 130));
+
+      //setInterval(
+      //() => ctx.fillText("YUM!", this.pizzapug.x, this.pizzapug.y),
+      //  2000
+      //);
+      //ctx.strokeText("YUM!", this.pizzapug.x, this.pizzapug.y);
+      //console.log("YUM");
       //acumular el score en una variable
       this.score += this.pizzaScore;
       //acceder al valor del DOM
@@ -76,10 +81,21 @@ class Game {
 
     if (lastBrocoli.y >= canvas.height) {
       //this.x = Math.floor(Math.random() * (1080 - 1)) + 1;
-      this.brocoliArr.push(new Food("./images/brocoli.png"));
+      this.brocoliArr.push(new Food("./images/brocoli.png", 80));
     } else if (lastCarrot.y >= canvas.height) {
       // this.x = Math.floor(Math.random() * (1080 - 1)) + 1;
-      this.carrotArr.push(new Food("./images/carrot.png"));
+      this.carrotArr.push(new Food("./images/carrot.png", 80));
+    }
+  };
+
+  morePizza = () => {
+    let lastPizza = this.pizzaArr[this.pizzaArr.length - 1];
+
+    if (lastPizza.y >= canvas.height) {
+      this.pizzaArr.push(
+        new Food("./images/pizza.png", 130),
+        new Food("./images/pizza.png", 130)
+      );
     }
   };
 
@@ -107,6 +123,7 @@ class Game {
       newNameScoreList.innerText =
         scoreDom + " points " + playerName + " you BEAST! ";
     }
+
     uListUpdateNamScor.appendChild(newNameScoreList);
   };
 
@@ -139,6 +156,7 @@ class Game {
     //añadir más vegetales a los arr
     this.moreVeggies();
     //this.foodSpeed();
+    this.morePizza();
 
     // Comprobar si colisionan los veggies
     this.carrotArr.forEach((eachCarrot) => {

@@ -41,10 +41,8 @@ const startGame = () => {
 
   //splashScreen da paso al canvas
   splashScreen.style.display = "none";
-  //score.style.display = "flex";
   canvas.style.display = "flex";
   gameOverScreen.style.display = "none";
-  //score.style.display = "block";
 
   // empieza el juego
   let newGame = new Game();
@@ -54,8 +52,9 @@ const startGame = () => {
       newGame.pizzapug[event.key]();
     }
   }); //esta sintaxis la vi en un video de youtube, es buena práctica¿?
-
+  //poner el score a 0
   newGame.scoreDom.innerText = 0;
+  //limpiar el "li" creado con el nombre y el score de la jugada anterior
   newGame.uListUpdateNamScor.innerText = " ";
 
   newGame.gameLoop();
