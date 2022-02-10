@@ -13,6 +13,7 @@ class Game {
     this.scoreDom = document.querySelector("#score");
     this.uListUpdateNamScor = document.querySelector("#nameandscore-list");
     this.addName = document.querySelector("#name-input");
+    this.listUpdateNamScor = document.querySelector("#nameandscore-list li");
     this.score = 0;
   }
 
@@ -106,7 +107,6 @@ class Game {
       newNameScoreList.innerText =
         scoreDom + " points " + playerName + " you BEAST! ";
     }
-
     uListUpdateNamScor.appendChild(newNameScoreList);
   };
 

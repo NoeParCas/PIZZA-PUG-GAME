@@ -8,6 +8,18 @@ body {
   color: white;
 }
 
+#score-container {
+  padding: 20px;
+  margin: 20px 10px 20px 10px;
+  font-size: 20px;
+}
+
+#score {
+  padding: 20px;
+  margin: 20px 10px 20px 10px;
+  font-size: 20px;
+}
+
 #game-canvas {
   /*background-image: url("./images/canvasbackground.jpg");*/
   border-radius: 5px;
@@ -39,7 +51,7 @@ body {
 }
 
 #splash-screen h1 {
-  font-size: 4rem;
+  font-size: 6rem;
   margin: 50px;
 }
 
@@ -145,9 +157,14 @@ body {
 }
 
 #gameover-title {
-  font-size: 2.5rem;
+  font-size: 6rem;
   font-weight: bold;
   margin-top: 50px;
+}
+
+#nameandscore-list {
+  list-style: none;
+  font-size: 1.5rem;
 }
 
 #gameover-screen {

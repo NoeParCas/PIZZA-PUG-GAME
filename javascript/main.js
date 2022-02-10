@@ -41,6 +41,7 @@ const startGame = () => {
 
   //splashScreen da paso al canvas
   splashScreen.style.display = "none";
+  //score.style.display = "flex";
   canvas.style.display = "flex";
   gameOverScreen.style.display = "none";
   //score.style.display = "block";
