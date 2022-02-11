@@ -30,15 +30,15 @@ Increase the gravity of the food
 
 ### main.js
 
--buildSplashScreen
+- buildSplashScreen
 
--buildGameScreen
+- buildGameScreen
 
--buildGameOverScreen
+- buildGameOverScreen
 
--addHoomanName (){}
+- addHoomanName (){}
 
--startGame () {}
+- startGame () {}
 
 ### game.js
 

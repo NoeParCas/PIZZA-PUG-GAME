@@ -21,7 +21,6 @@ body {
 }
 
 #game-canvas {
-  /*background-image: url("./images/canvasbackground.jpg");*/
   border-radius: 5px;
   border-style: solid;
   margin-top: 150px;
@@ -36,9 +35,7 @@ body {
 
 .add-name {
   display: flex;
-  height: 40px;
-  width: 197px;
-  border-radius: 5px;
+  height: 30px;
 }
 
 #btn-add {
@@ -118,6 +115,7 @@ body {
   font-family: "Source Code Pro", monospace;
   color: white;
   font-size: 1.5rem;
+  margin-top: 50px;
 }
 
 #start-btn:hover {
