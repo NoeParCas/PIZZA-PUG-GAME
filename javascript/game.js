@@ -1,6 +1,6 @@
 class Game {
   constructor() {
-    //! PROPIEDADES DEL JUEGO
+    //* GAME PROPERTIES
     this.bg = new Image();
     this.bg.src = "./images/canvasbackground.jpg";
     this.pizzapug = new Pizzapug();
@@ -19,7 +19,8 @@ class Game {
     this.yumOn = false;
   }
 
-  //Aquí realizamos las funciones
+  //* GAME FUNCTIONS
+
   drawBackground = () => {
     ctx.drawImage(this.bg, 0, 0, canvas.width, canvas.height);
   };
@@ -35,7 +36,6 @@ class Game {
       this.pizzapug.y < veggies.y + veggies.height &&
       this.pizzapug.height + this.pizzapug.y > veggies.y
     ) {
-      //console.log("COLISIOOOOON");
       //termino loop
       this.isGameOn = false;
       //oculto canvas
@@ -59,25 +59,16 @@ class Game {
       this.pizzapug.y < pizza.y + pizza.height &&
       this.pizzapug.height + this.pizzapug.y > pizza.y
     ) {
-      //console.log("COLISIOOOOON");
       //eliminar pizza
       this.pizzaArr.splice(this.pizzaArr[i], 1);
       this.pizzaArr.push(new Food("./images/pizza.png", 130));
-      //this.yumOn = true;
-      //this.yumyText();
+
       ctx.drawImage(this.yumy, this.pizzapug.x, this.pizzapug.y, 50, 50);
-      //this.yumyText();
-      //setInterval(
-      //() => ctx.fillText("YUM!", this.pizzapug.x, this.pizzapug.y),
-      //  2000
-      //);
-      //ctx.strokeText("YUM!", this.pizzapug.x, this.pizzapug.y);
-      //console.log("YUM");
+
       //acumular el score en una variable
       this.score += this.pizzaScore;
       //acceder al valor del DOM
       this.scoreDom.innerText = this.score;
-      //console.log(this.scoreDom.innerText);
     }
   };
 
@@ -94,10 +85,8 @@ class Game {
     let lastCarrot = this.carrotArr[this.carrotArr.length - 1];
 
     if (lastBrocoli.y >= canvas.height) {
-      //this.x = Math.floor(Math.random() * (1080 - 1)) + 1;
       this.brocoliArr.push(new Food("./images/brocoli.png", 80));
     } else if (lastCarrot.y >= canvas.height) {
-      // this.x = Math.floor(Math.random() * (1080 - 1)) + 1;
       this.carrotArr.push(new Food("./images/carrot.png", 80));
     }
   };
@@ -141,15 +130,15 @@ class Game {
     uListUpdateNamScor.appendChild(newNameScoreList);
   };
 
-  //! MÉTODOS DEL JUEGO
-  //Aquí invocamos las funciones
+  //* GAME METHODS
+
+  //!Aquí invocamos las funciones
+
   gameLoop = () => {
-    //console.log("FUNCIONANDO!!"); funciona ok
     // 1. limpiar el canvas
     this.clearCanvas();
     // 2. mover los elementos
     this.pizzapug.pugGravity();
-    //this.veggies.gravity(); NO FUNCIONA!!! estoy llamando a la función antes de que se dibujen en el canvas?¿?¿?
 
     // 3. dibujar los elementos
     this.drawBackground();
@@ -169,7 +158,7 @@ class Game {
 
     //añadir más vegetales a los arr
     this.moreVeggies();
-    //this.foodSpeed();
+    //añadir más pizza a los arr
     this.morePizza();
 
     // Comprobar si colisionan los veggies

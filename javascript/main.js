@@ -37,7 +37,6 @@ const startGame = () => {
     return true;
   });
   audio.loop = true;
-  //audio.reset;
 
   //splashScreen da paso al canvas
   splashScreen.style.display = "none";
@@ -46,33 +45,24 @@ const startGame = () => {
 
   // empieza el juego
   let newGame = new Game();
-  //console.log(newGame);
+
   document.addEventListener("keydown", (event) => {
     if (event.key.includes("Arrow")) {
       newGame.pizzapug[event.key]();
     }
-  }); //esta sintaxis la vi en un video de youtube, es buena práctica¿?
+  });
   //poner el score a 0
   newGame.scoreDom.innerText = 0;
   //limpiar el "li" creado con el nombre y el score de la jugada anterior
   newGame.uListUpdateNamScor.innerText = " ";
 
   newGame.gameLoop();
-
-  //eatPizzaButton.removeEventListener("click", startGame); // quitar el addevEventListener para evitar bugs,  o que el juego se vuelva a iniciar de 0
 };
 
 //* ADD EVENT lISTENERS
 
-//eatPizzaButton.addEventListener("click", startGame);
-eatPizzaButton.addEventListener("click", () => {
-  startGame();
-});
+eatPizzaButton.addEventListener("click", startGame);
 
-playAgainButton.addEventListener("click", () => {
-  startGame();
-});
+playAgainButton.addEventListener("click", startGame);
 
-addNameBtn.addEventListener("click", () => {
-  addHoomanName();
-});
+addNameBtn.addEventListener("click", addHoomanName);

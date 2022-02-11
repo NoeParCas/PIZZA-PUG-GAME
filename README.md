@@ -1,62 +1,93 @@
-PIZZA PUG GAME
+# PIZZA PUG GAME
 
-DESCRIPTION
+A hungry pug is around our galaxy and his greatest desire is to eat. But be careful!
+Veggies are extremely unhealthy!! They can send you directly to the Game Over screen.
+May the pizza be with you!
 
-A hungry pug is around our galaxy and his greatest desire is to eat. But be careful! Veggies are extremely unhealthy!! They can send you directly to the Game Over screen. May the pizza be with you!
-
-MVP (DOM-CANVAS)
+## (DOM-CANVAS)
 
 The game has a pug that moves around the canvas. Vertically and horizontally.
+
 Food start to fall from the top of the canvas.
+
 Veggies are so unhealthy that can take you to the Game Over Screen.
+
 Pizza is the only food you can eat. It desapears when you touch it.
 
-BACKLOG
+## BACKLOG
 
-Scoreboard, each pizza 1000 points
+Scoreboard, each pizza 1000 points.
+
 Add music to the game screen.
+
 Add players name at the beginning of the game.
+
 Add a message at the end with players name and score.
-Increase the speed of the falling food
 
-DATA STRUCTURE
+Increase the gravity of the food
 
-main.js
+## DATA STRUCTURE
 
--buildSplashScreen () {}
--buildGameScreen () {}
--buildGameOverScreen () {}
--addHoomanName () {}
+### main.js
+
+-buildSplashScreen
+
+-buildGameScreen
+
+-buildGameOverScreen
+
+-addHoomanName (){}
+
 -startGame () {}
 
-game.js
+### game.js
 
--Game () {}
--gameLoop () {}
--checkCollisions (){}
--clearCanvas () {}
--updateCanvas () {}
--drawCanvas() {}
--gameOver () {}
--addFood () {}
+- drawBackground (){}
 
-pizzapug.js
+- clearCanvas (){}
 
--Pug (){this.x; this.y; this.direction; this.size}
--draw (){}
--move () {}
+- checkColision (){}
 
-food.js
--brocoli () { this.x; this.y; this.direction; this.size }
--draw () {}
--move () {}
+- checkScore (){}
 
-STATES & STATES TRANSITIONS
+- yumyText (){}
 
--splashScreen
--gameScreen
--gameOverScreen
+- moreVeggies (){}
 
-TASK
+- morePizza (){}
 
-Task definition in order of priority
+- updateNameScore (){}
+
+- gameLoop (){}
+
+### pizzapug.js
+
+- drawPizzaPug (){}
+
+- pugGravity (){}
+
+- ArrowRight (){}
+
+- ArrowLeft (){}
+
+- ArrowUp (){}
+
+- ArrowDown (){}
+
+### food.js
+
+- drawImage (){}
+
+- Gravity (){}
+
+- clearImage (){}
+
+- foodSpeed (){}
+
+# STATES & STATES TRANSITIONS
+
+- SplashScreen
+
+- GameScreen
+
+- gameOverScreen

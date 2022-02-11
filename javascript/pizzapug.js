@@ -1,6 +1,6 @@
 class Pizzapug {
   constructor() {
-    //propiedades del pug pizzero
+    //* PIZZAPUG PROPERTIES
     this.x = canvas.width / 2;
     this.y = canvas.height / 2;
     this.width = 150;
@@ -10,15 +10,13 @@ class Pizzapug {
     this.pizzapugSpeed = 60;
   }
 
-  //métodos del pug pizzero
+  //* PIZZAPUG METHODS
   drawPizzapug = () => {
     ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
   };
 
   pugGravity = () => {
-    //this.y = this.y + 0.5;
     const downPosition = this.y + 0.5;
-    //console.log(this.y);
     if (downPosition <= 520) {
       this.y = downPosition;
     }
@@ -26,7 +24,6 @@ class Pizzapug {
 
   ArrowRight = () => {
     const rightPosition = this.x + this.pizzapugSpeed;
-    //console.log(this.x);
     if (rightPosition <= 1080) {
       this.x = rightPosition;
     }
@@ -34,7 +31,6 @@ class Pizzapug {
 
   ArrowLeft = () => {
     const leftPosition = this.x - this.pizzapugSpeed;
-    //console.log(this.x);
     if (leftPosition >= -20) {
       this.x = leftPosition;
     }
@@ -49,23 +45,8 @@ class Pizzapug {
 
   ArrowDown = () => {
     const downPosition = this.y + this.pizzapugSpeed;
-    //console.log(this.y);
     if (downPosition <= 509) {
       this.y = downPosition;
     }
   };
-
-  /*pizzapugMovement = (event) => {
-    if (event.key === "ArrowRight") {
-      this.x = this.x + this.pizzapugSpeed;
-    } else if (event.key === "ArrowLeft") {
-      this.x = this.x - this.pizzapugSpeed;
-    } else if (event.key === "ArrowUp") {
-      this.y = this.y - this.pizzapugSpeed;
-    } else if (event.key === "ArrowDown") {
-      this.y = this.y + this.pizzapugSpeed;
-    }
-  };*/
-
-  // movimiento!!
 }
